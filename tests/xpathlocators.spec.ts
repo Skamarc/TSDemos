@@ -24,8 +24,15 @@ await expect(relativeLogo).toBeVisible();
 
         
     const productsCount:number =  await products.count();
-    console.log("NO of Computer products: ", productsCount);
+    console.log("NO of Computer products: ", productsCount); 
+
     expect(productsCount).toBeGreaterThan(0);
+
+   //console.log(await products.textContent());
+
+    console.log("First computer related product: ", await products.first().textContent());
+    console.log("First computer related product: ", await products.last().textContent());
+    console.log("NTH computer related product: ", await products.nth(2).textContent());  
 
 //await expect(products).toBeVisible();
 
